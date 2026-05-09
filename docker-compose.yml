@@ -1,0 +1,18 @@
+services:
+  jenkins:
+    container_name: "jenkins"
+    image: jenkins/jenkins
+    ports:
+      - "1111:8080"
+    volumes:
+      - "demo-vol:/var/jenkins_home"
+    networks:
+      - "demo-net"
+
+volumes:
+  demo-vol:
+    name: "jenkins-demo-vol"
+
+networks:
+  demo-net:
+    name: "jenkins-demo-net"
